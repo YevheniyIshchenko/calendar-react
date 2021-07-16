@@ -11,6 +11,7 @@ const App = () => {
   const [weekStartDate, setweekStartDate] = useState(new Date());
 
   const weekDates = generateWeekRange(getWeekStartDate(weekStartDate));
+  // console.log(weekDates);
 
   const onPreviousWeek = () =>
     setweekStartDate(new Date(moment(weekStartDate).day(-7)));
@@ -26,6 +27,7 @@ const App = () => {
         onPreviousWeek={onPreviousWeek}
         onNextWeek={onNextWeek}
         onCurrentDate={onCurrentDate}
+        weekDates={weekDates}
       />
       <Calendar weekDates={weekDates} />
     </>
