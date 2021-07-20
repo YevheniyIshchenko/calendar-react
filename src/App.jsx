@@ -1,17 +1,18 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import Header from "./components/header/Header.jsx";
 import Calendar from "./components/calendar/Calendar.jsx";
 import moment from "moment";
-
+import Modal from "./components/modal/Modal.jsx";
 import { getWeekStartDate, generateWeekRange } from "../src/utils/dateUtils.js";
 
 import "./common.scss";
+
 
 const App = () => {
   const [weekStartDate, setweekStartDate] = useState(new Date());
 
   const weekDates = generateWeekRange(getWeekStartDate(weekStartDate));
-  // console.log(weekDates);
+
 
   const onPreviousWeek = () =>
     setweekStartDate(new Date(moment(weekStartDate).day(-7)));
@@ -28,7 +29,7 @@ const App = () => {
         onNextWeek={onNextWeek}
         onCurrentDate={onCurrentDate}
         weekDates={weekDates}
-      />
+      ></Header>
       <Calendar weekDates={weekDates} />
     </>
   );
