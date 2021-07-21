@@ -1,9 +1,9 @@
 import React from "react";
-import { addEvent, getEvents } from "../../gateway/events";
+import { addEvent } from "../../gateway/events";
 
 import "./modal.scss";
 
-const Modal = ({ closeWindow }) => {
+const Modal = ({ closeWindow, createEvent }) => {
   let formRef = null;
   const setRef = (node) => {
     formRef = node;
@@ -16,7 +16,7 @@ const Modal = ({ closeWindow }) => {
       {}
     );
 
-    addEvent(formData);
+    createEvent(formData);
 
     console.log(formData);
   };
@@ -50,7 +50,10 @@ const Modal = ({ closeWindow }) => {
               placeholder='Description'
               className='event-form__field'
             ></textarea>
-            <button type='submit' className='event-form__submit-btn'>
+            <button
+              type='submit'
+              className='event-form__submit-btn'
+            >
               Create
             </button>
           </form>

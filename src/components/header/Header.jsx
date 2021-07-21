@@ -5,7 +5,13 @@ import Modal from "../modal/Modal.jsx";
 
 import "./header.scss";
 
-const Header = ({ onPreviousWeek, onNextWeek, onCurrentDate, weekDates }) => {
+const Header = ({
+  onPreviousWeek,
+  onNextWeek,
+  onCurrentDate,
+  weekDates,
+  createEvent,
+}) => {
   const startOfMonth = months[moment(weekDates[0]).month()];
   const endOfMonth = months[moment(weekDates[6]).month()];
   let monthTitle;
@@ -49,7 +55,9 @@ const Header = ({ onPreviousWeek, onNextWeek, onCurrentDate, weekDates }) => {
           <span className='navigation__displayed-month'>{monthTitle}</span>
         </div>
       </header>
-      {modalWindow && <Modal closeWindow={switchModalWindow} />}
+      {modalWindow && (
+        <Modal closeWindow={switchModalWindow} createEvent={createEvent} />
+      )}
     </>
   );
 };

@@ -1,17 +1,14 @@
 import React from "react";
 import Hour from "../hour/Hour";
+import moment from "moment";
 import "./day.scss";
+import { days } from "../../utils/dateUtils";
 
-const Day = ({ dataDay, dayEvents }) => {
-  // const [redLine, setRedLine] = useState(new Date().getMinutes());
+const Day = ({ dataDay, dayEvents, deleteEvent, weekDates }) => {
   const hours = Array(24)
     .fill()
     .map((val, index) => index);
 
-  // useEffect(() => {
-  //   const id = setInterval(() => setRedLine(redLine + 1), 1000 * 60);
-  //   return () => clearTimeout(id);
-  // });
 
   return (
     <div className='calendar__day' data-day={dataDay}>
@@ -22,7 +19,16 @@ const Day = ({ dataDay, dayEvents }) => {
         );
 
         return (
-          <Hour key={dataDay + hour} dataHour={hour} hourEvents={hourEvents} />
+          <Hour
+            key={dataDay + hour}
+            dataHour={hour}
+            hourEvents={hourEvents}
+            deleteEvent={deleteEvent}
+            dataDay={dataDay}
+            weekDates={weekDates}
+            hours={hours}
+            // currentDay={today}
+          />
         );
       })}
     </div>

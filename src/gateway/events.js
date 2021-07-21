@@ -51,10 +51,10 @@ export const addEvent = (events) =>
     body: JSON.stringify(events),
   });
 
-export const deleteEvent = (id) => {
+export const deleteEvents = (id) => {
   return fetch(`${baseUrl}/${id}`, {
     method: "DELETE",
-  });
+  }).catch(() => console.log("Failed to delete event"));
 };
 
 //  const events = getEvents();

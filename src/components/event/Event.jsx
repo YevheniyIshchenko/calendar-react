@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { deleteEvent } from "../../gateway/events";
+
 
 import "./event.scss";
 
-const Event = ({ height, marginTop, title, time, id }) => {
+const Event = ({ height, marginTop, title, time, id, deleteEvent }) => {
   const [deleteBtn, setDeleteBtn] = useState(false);
   const eventStyle = {
     height,
     marginTop,
   };
-
+  const style = {
+    marginTop: marginTop + height,
+  };
   return (
     <>
       <div
@@ -21,7 +23,11 @@ const Event = ({ height, marginTop, title, time, id }) => {
         <div className='event__time'>{time}</div>
       </div>
       {deleteBtn && (
-        <button className='delete-event-btn' onClick={() => deleteEvent(id)}>
+        <button
+          className='delete-event-btn'
+          style={style}
+          onClick={() => deleteEvent(id)}
+        >
           <i className='fas fa-trash'></i>
           Delete
         </button>
