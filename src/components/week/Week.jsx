@@ -21,8 +21,6 @@ const Week = ({ weekDates, events, deleteEvent }) => {
             dataDay={dayStart.getDate()}
             dayEvents={dayEvents}
             deleteEvent={deleteEvent}
-            weekDates={weekDates}
-            dayStart={dayStart}
           />
         );
       })}

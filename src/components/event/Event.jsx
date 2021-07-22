@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 import "./event.scss";
 
 const Event = ({ height, marginTop, title, time, id, deleteEvent }) => {
@@ -12,6 +11,7 @@ const Event = ({ height, marginTop, title, time, id, deleteEvent }) => {
   const style = {
     marginTop: marginTop + height,
   };
+  // debugger;
   return (
     <>
       <div
@@ -24,8 +24,8 @@ const Event = ({ height, marginTop, title, time, id, deleteEvent }) => {
       </div>
       {deleteBtn && (
         <button
-          className='delete-event-btn'
           style={style}
+          className='delete-event-btn'
           onClick={() => deleteEvent(id)}
         >
           <i className='fas fa-trash'></i>

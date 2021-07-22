@@ -1,14 +1,12 @@
 import React from "react";
 import Hour from "../hour/Hour";
-import moment from "moment";
 import "./day.scss";
-import { days } from "../../utils/dateUtils";
 
-const Day = ({ dataDay, dayEvents, deleteEvent, weekDates }) => {
+
+const Day = ({ dataDay, dayEvents, deleteEvent}) => {
   const hours = Array(24)
     .fill()
     .map((val, index) => index);
-
 
   return (
     <div className='calendar__day' data-day={dataDay}>
@@ -25,9 +23,7 @@ const Day = ({ dataDay, dayEvents, deleteEvent, weekDates }) => {
             hourEvents={hourEvents}
             deleteEvent={deleteEvent}
             dataDay={dataDay}
-            weekDates={weekDates}
             hours={hours}
-            // currentDay={today}
           />
         );
       })}
