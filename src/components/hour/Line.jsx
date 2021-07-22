@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Line = ({ marginTop }) => {
   const lineStyle = {
@@ -7,7 +7,8 @@ const Line = ({ marginTop }) => {
 
   return (
     <div style={lineStyle} className='line'>
-      <span className='red-line'></span>
+      <div className='red-line'></div>
+      <div className='circle'></div>
     </div>
   );
 };

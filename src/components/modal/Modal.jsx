@@ -1,6 +1,5 @@
 import React from "react";
-import { addEvent } from "../../gateway/events";
-
+import PropTypes from "prop-types";
 import "./modal.scss";
 
 const Modal = ({ closeWindow, createEvent }) => {
@@ -17,8 +16,6 @@ const Modal = ({ closeWindow, createEvent }) => {
     );
 
     createEvent(formData);
-
-    console.log(formData);
   };
 
   return (
@@ -50,10 +47,7 @@ const Modal = ({ closeWindow, createEvent }) => {
               placeholder='Description'
               className='event-form__field'
             ></textarea>
-            <button
-              type='submit'
-              className='event-form__submit-btn'
-            >
+            <button type='submit' className='event-form__submit-btn'>
               Create
             </button>
           </form>
@@ -61,6 +55,11 @@ const Modal = ({ closeWindow, createEvent }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  closeWindow: PropTypes.func.isRequired,
+  createEvent: PropTypes.func.isRequired,
 };
 
 export default Modal;

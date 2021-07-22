@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import "./event.scss";
 
@@ -34,6 +35,15 @@ const Event = ({ height, marginTop, title, time, id, deleteEvent }) => {
       )}
     </>
   );
+};
+
+Event.propTypes = {
+  deleteEvent: PropTypes.func.isRequired,
+  height: PropTypes.number.isRequired,
+  marginTop: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Event;

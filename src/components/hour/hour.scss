@@ -2,16 +2,35 @@
   display: flex;
   flex-direction: column;
   height: calc(100vh - 60px);
+  &__time-scale{
+    background-color: cornflowerblue;
 
+  }
   &__time-slot {
     height: 59px;
     position: relative;
     border-bottom: 1px solid #eee;
+    
   }
 }
-
-.red-line{
-  display: block;
-  height: 1px;
+.line{
+  display: flex;
+  align-items: center;
+}
+.circle {
+  position: absolute;
+  display: inline-block;
+  left: -6px;
+  width: 10px;
+  height: 10px;
   background-color: red;
+  border-radius: 50%;
+  z-index: 5;
+}
+.red-line {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  border-top: 2px solid red;
+  z-index: 5;
 }

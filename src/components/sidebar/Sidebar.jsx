@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./sidebar.scss";
 
@@ -16,6 +17,10 @@ const Sidebar = (props) => {
       ))}
     </div>
   );
+};
+
+Sidebar.propTypes = {
+  props: PropTypes.object,
 };
 
 export default Sidebar;

@@ -3,10 +3,12 @@
   height: 60px;
   padding: 0 48px;
   align-items: center;
+  background-color: burlywood;
 }
 
 .create-event-btn {
   padding: 0 16px;
+  background-color: rgb(42, 173, 25);
 
   &__icon {
     margin-right: 8px;
@@ -15,6 +17,7 @@
 
 .navigation {
   &__today-btn {
+    background-color: rgb(42, 173, 25);
     margin-left: 32px;
     padding: 0 16px;
   }
@@ -25,6 +28,11 @@
   }
 
   &__displayed-month {
+    display: inline-block;
+    height: 40px;
     margin-left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(42, 173, 25);
   }
 }

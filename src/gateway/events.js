@@ -19,7 +19,7 @@ export const getEvents = () => {
     .then((response) => response.json())
     .then((tasks) => mapTasks(tasks))
     .catch(() => {
-      console.log("error");
+      alert(`Internal Server Error. Can't display events'`);
     });
 };
 
@@ -30,10 +30,10 @@ export const addEvent = (events) =>
       "Content-Type": "application/json",
     },
     body: JSON.stringify(events),
-  });
+  }).catch(() => alert("Internal Server Error. Failed to delete event"));
 
 export const deleteEvents = (id) => {
   return fetch(`${baseUrl}/${id}`, {
     method: "DELETE",
-  }).catch(() => console.log("Failed to delete event"));
+  }).catch(() => alert("Internal Server Error. Failed to delete event"));
 };

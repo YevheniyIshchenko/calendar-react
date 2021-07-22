@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 import { months } from "../../utils/dateUtils.js";
 import Modal from "../modal/Modal.jsx";
+import PropTypes from "prop-types";
 
 import "./header.scss";
 
@@ -60,6 +61,14 @@ const Header = ({
       )}
     </>
   );
+};
+
+Event.propTypes = {
+  onPreviousWeek: PropTypes.func.isRequired,
+  onNextWeek: PropTypes.func.isRequired,
+  onCurrentDate: PropTypes.func.isRequired,
+  createEvent: PropTypes.func.isRequired,
+  weekDates: PropTypes.array.isRequired,
 };
 
 export default Header;
