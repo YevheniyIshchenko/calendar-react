@@ -8,6 +8,11 @@
     height: 100px;
     padding-left: 48px;
     background-color: rgb(153, 221, 44);
+    :last-child{
+      margin-right: 17px;
+    
+
+    }
   }
 
   &__body {
