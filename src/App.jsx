@@ -27,7 +27,6 @@ const App = () => {
   const deleteEvent = (id) => {
     deleteEvents(id).then(() => getEvent());
   };
-//  debugger;
 
   const weekDates = generateWeekRange(getWeekStartDate(weekStartDate));
 

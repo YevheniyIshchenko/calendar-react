@@ -9,10 +9,6 @@ const mapTasks = (tasks) =>
     ...rest,
   }));
 
-// export const mapTasks = (tasks) =>
-//   tasks.map(({ ...rest }) => ({
-//     ...rest,
-//   }));
 
 export const getEvents = () => {
   return fetch(baseUrl)

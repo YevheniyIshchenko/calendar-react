@@ -12,7 +12,7 @@ const Event = ({ height, marginTop, title, time, id, deleteEvent }) => {
   const style = {
     marginTop: marginTop + height,
   };
-  // debugger;
+
   return (
     <>
       <div

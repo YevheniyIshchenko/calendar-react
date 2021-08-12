@@ -16,6 +16,7 @@ const Modal = ({ closeWindow, createEvent }) => {
     );
 
     createEvent(formData);
+    closeWindow();
   };
 
   return (
